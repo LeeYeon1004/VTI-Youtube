@@ -5,7 +5,7 @@ import Logo from "../../assets/img/logo.png";
 function Header() {
   return (
     <div className="flex w-full bg-[#202020]">
-      <div className="logo w-[120px] h-[56px] text-[#fff]">
+      <div className="logo w-[120px] h-[56px]">
         <img src={Logo} alt="" />
       </div>
       <div className="search">
