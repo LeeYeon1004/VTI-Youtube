@@ -1,8 +1,7 @@
-import * as request from "./axios";
+// import * as request from "./axios";
 
 const readApi = () => {
   // call API
-
-  return request.get(`movies`);
+  // return request.get(`movies`);
 };
 export default readApi;

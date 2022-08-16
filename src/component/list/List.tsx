@@ -1,9 +1,6 @@
+import "./list.scss";
 
-function List(){
-    return(
-        <div>
-
-        </div>
-    )
+function List() {
+  return <></>;
 }
 export default List;
