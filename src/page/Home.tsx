@@ -1,7 +1,7 @@
 import Header from "../component/header/Header";
 import Sitebar from "../component/Sitebar/Sitebar";
-import List from "../component/list/List";
 import { useEffect } from "react";
+import ListContainer from "../container/ListContainer";
 
 function Home() {
   useEffect(() => {
@@ -12,7 +12,7 @@ function Home() {
       <Header />
       <div className="flex">
         <Sitebar />
-        <List />
+        <ListContainer />
       </div>
     </>
   );

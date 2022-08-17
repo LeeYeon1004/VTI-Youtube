@@ -1,10 +1,9 @@
-import "./header.scss";
 import Logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="flex w-full bg-[#202020] justify-between items-center px-[16px] border-[1px] border-solid border-[#ffffff1a]">
+    <div className="flex w-full bg-[#202020] justify-between items-center px-[16px] border-[1px] border-solid border-[#ffffff1a] fixed">
       <Link to="/">
         <div className="logo w-[120px] h-[56px] flex items-center text-white">
           <i className="fa-solid fa-bars"></i>
