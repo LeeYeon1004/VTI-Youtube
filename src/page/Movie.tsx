@@ -8,7 +8,7 @@ function Movie() {
   let { itemID } = useParams();
   console.log(itemID);
   const [data, setData] = useState<IData[]>([]);
-  const [movie, setMovie] = useState<IData[]>();
+  const [movie, setMovie] = useState<IData>();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +17,7 @@ function Movie() {
 
   useEffect(() => {
     const itemMovie = data.filter((item) => item.id === itemID);
-    setMovie(itemMovie);
+    setMovie(itemMovie[0]);
   }, [data, itemID]);
   const handleGetMovie = async () => {
     const getFilm = await getMovies();
@@ -27,15 +27,19 @@ function Movie() {
     <div>
       <Header />
       <div className="w-full pt-[calc(75px+58px)] h-screen bg-[#181818] flex justify-center">
-        <div className="mr-[24px] ml-[75px]">
+        <div className="mr-[24px] ml-[75px] max-w-[900px] max-h-[600px]">
           <ReactPlayer
+            width="100%"
+            height="100%"
             playing
             controls
             url={`https://www.youtube.com/watch?v=${itemID}`}
           />
-          <div>
-            {/* <h3 className="text-white">{movie.snippet.title}</h3> */}
-            <p className="text-[#aaa]">Mô tả</p>
+          <div className="">
+            <h3 className="text-white my-[24px]">{movie?.snippet.title}</h3>
+            <p className="text-[#aaa] text-[12px]">
+              {movie?.snippet.description}
+            </p>
           </div>
         </div>
       </div>

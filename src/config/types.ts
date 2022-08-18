@@ -12,5 +12,4 @@ export interface IData {
     };
     title: string;
   };
-  index: number;
 }
