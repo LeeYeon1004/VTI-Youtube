@@ -1,35 +1,26 @@
 import Logo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IData } from "../../config/types";
-import { getMovies } from "../../config/axios";
+import { getApiSearch } from "../../config/axios";
 
 function Header() {
   const [search, setSearch] = useState("");
-  const [itemMovie, setItemMovie] = useState<IData[]>([]);
   const [data, setData] = useState<IData[]>([]);
-  useEffect(() => {
-    const handleGetFilm = async () => {
-      const getFilm = await getMovies();
-      setData(getFilm);
-    };
-    handleGetFilm();
-  }, []);
-  const handleSearch = () => {
-    const setFilm = data.filter((item) =>
-      item.snippet.title.toLocaleLowerCase().includes(search)
-    );
-    setItemMovie(setFilm);
-  };
-  console.log(itemMovie[0]);
 
+  const handleSearch = async () => {
+    const getApi = await getApiSearch(search);
+    setData(getApi);
+  };
   const handleKey = (e: { key: string }) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
+  console.log(data);
+
   return (
-    <div className="fixed w-full w-full bg-[#202020]">
+    <div className="fixed w-full bg-[#202020]">
       <div className="flex justify-between items-center px-[16px] border-[1px] border-solid border-[#ffffff1a]">
         <Link to="/">
           <div className="logo w-[120px] h-[56px] flex items-center text-white">
@@ -57,7 +48,7 @@ function Header() {
           <i className="fa-solid fa-gear"></i>
         </div>
       </div>
-      <div className="h-[56px] leading-[56px] border-[1px] border-solid border-[#ffffff1a]"></div>
+      {/* <div className="h-[56px] leading-[56px] border-[1px] border-solid border-[#ffffff1a]"></div> */}
     </div>
   );
 }

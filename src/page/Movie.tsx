@@ -26,8 +26,8 @@ function Movie() {
   return (
     <div>
       <Header />
-      <div className="w-full pt-[calc(75px+58px)] h-screen bg-[#181818] flex justify-center">
-        <div className="mr-[24px] ml-[75px] max-w-[900px] max-h-[600px]">
+      <div className="w-full pt-[calc(75px)] h-screen bg-[#181818] flex flex-col items-center justify-center">
+        <div className="mr-[24px] ml-[75px] w-[900px] h-[600px]">
           <ReactPlayer
             width="100%"
             height="100%"
@@ -35,12 +35,12 @@ function Movie() {
             controls
             url={`https://www.youtube.com/watch?v=${itemID}`}
           />
-          <div className="">
-            <h3 className="text-white my-[24px]">{movie?.snippet.title}</h3>
-            <p className="text-[#aaa] text-[12px]">
-              {movie?.snippet.description}
-            </p>
-          </div>
+        </div>
+        <div className="">
+          <h3 className="text-white my-[24px]">{movie?.snippet.title}</h3>
+          <p className="text-[#aaa] text-[12px]">
+            {movie?.snippet.description}
+          </p>
         </div>
       </div>
     </div>

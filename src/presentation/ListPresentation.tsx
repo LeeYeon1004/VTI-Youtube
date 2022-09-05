@@ -3,7 +3,7 @@ import { IData } from "../config/types";
 
 export default function ListPresentation({ data }: { data: IData[] }) {
   return (
-    <div className="bg-[#181818] ml-[240px] w-full mt-[calc(58px+56px)]">
+    <div className="bg-[#181818] ml-[240px] w-full mt-[calc(58px)]">
       <div className="w-full flex justify-center mt-[24px]">
         <ul className="list-none w-full max-w-[1504px] flex justify-center flex-wrap">
           {data.map((item, index) => (
